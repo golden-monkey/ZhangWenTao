@@ -22,7 +22,7 @@ import static android.net.ConnectivityManager.*;
 
 public class HttpUtil {
 
-    /*// 懒汉式
+    // 懒汉式
     private static HttpUtil httpUtil = null;
     private HttpUtil(){};
     public static HttpUtil getInstance() {
@@ -91,7 +91,7 @@ public class HttpUtil {
             e.printStackTrace();
         }
         return null;
-    }*/
+    }
 
 
 
