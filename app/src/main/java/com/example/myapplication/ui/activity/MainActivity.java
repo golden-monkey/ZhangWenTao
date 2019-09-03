@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseActivity;
@@ -12,6 +13,7 @@ import com.example.myapplication.data.data.ShopBean;
 import com.example.myapplication.di.contract.IShopContract;
 import com.example.myapplication.di.presenter.ShopPresenter;
 import com.example.myapplication.ui.adapter.MyAdapter;
+import com.example.myapplication.ui.utils.HttpUtil;
 import com.qy.xlistview.XListView;
 
 import java.util.ArrayList;
@@ -41,6 +43,14 @@ public class MainActivity extends BaseActivity<IShopContract.IShopView, ShopPres
     @Override
     protected void initView() {
         listView = findViewById(R.id.listView);
+        if (HttpUtil.isNetWorkConnection(MainActivity.this)){
+            Toast.makeText(MainActivity.this, "有网", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(MainActivity.this, "没网", Toast.LENGTH_LONG).show();
+        }
+        if (HttpUtil.isWIFIConnection(MainActivity.this)) {
+            Toast.makeText(MainActivity.this, "是WIFI", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
