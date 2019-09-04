@@ -40,7 +40,7 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
-        if (convertView != null) {
+        if (convertView == null) {
             convertView = View.inflate(context, R.layout.item, null);
             holder = new ViewHolder();
             holder.img = convertView.findViewById(R.id.img);

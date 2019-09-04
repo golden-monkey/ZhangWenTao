@@ -37,9 +37,6 @@ public class MainActivity extends BaseActivity<IShopContract.IShopView, ShopPres
             listView.setAdapter(adapter);
         }
     }
-
-
-
     @Override
     protected void initView() {
         listView = findViewById(R.id.listView);
